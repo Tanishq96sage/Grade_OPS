@@ -444,7 +444,7 @@ def review_queue(
             db.query(PlagiarismFlag)
             .filter((PlagiarismFlag.crop_a_id == crop.id) | (PlagiarismFlag.crop_b_id == crop.id))
             .first()
-            .is not None
+            is not None
         )
 
         items.append(schemas.ReviewQueueItem(
